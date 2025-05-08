@@ -22,6 +22,7 @@
 Every module or class should have responsibility over a single part of the functionality provided by the softwware and that responsibility should be entirely encapsulated by that class.
 
 <pre>
+<code>
 '''
 import math
 import json
@@ -84,4 +85,5 @@ outputter = SumCalculatorOutputter(areas)
 print(outputter.json())
 print(outputter.html())
 '''
+</code>
 </pre>
