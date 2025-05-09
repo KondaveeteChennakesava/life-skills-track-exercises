@@ -1,8 +1,10 @@
 # SOLID Principles
 
-* SOLID principles are the design principles that enable us manage most of the software design problems.
-* This is an acronym for five design principles intended to make most software design more understandable, flexible and maintainable.
-* These principles are the subset of many principles promoted by Robert C. Martin.
+## Introduction
+
+* SOLID principles are the design principles that enable us to manage most of the software design problems.
+* This is an acronym for five design principles intended to make most software design more understandable, flexible, and maintainable.
+* These principles are a subset of many principles promoted by Robert C. Martin.
 * This acronym was first introduced by Michael Feathers.
 
 **S: Single Responsibility Principle**
@@ -17,7 +19,7 @@
 
 ## Single Responsibility Principle
 
-Every module or class should have responsibility over a single part of the functionality provided by the software and that responsibility should be entirely encapsulated by that class.
+Every module or class should have responsibility over a single part of the functionality provided by the software, and that responsibility should be entirely encapsulated by that class.
 
 <pre>
 <code>
@@ -59,7 +61,7 @@ class SumCalculatorOutputter:
         return json.dumps(data)
 
     def html(self):
-        return f"\nSum of the areas of provided shapes: {self.calculator.sum()}\n"
+        return f"\nSum of the areas of provided shapes{self.calculator.sum()}\n"
 
 shapes = [
     Circle(2),
@@ -78,12 +80,12 @@ print(outputter.html())
 </code>
 </pre>
 
----
 
 ## Open Closed Principle
 
-Software entities such as classes, modules, functions etc should be open for extension, but closed for modification.
-Any new functionality should be implemented by adding new classes, attributes an methods, instead of changing the current ones or existing ones.
+* Software entities such as classes, modules, functions, etc, should be open for extension, but closed for modification.
+
+* Any new functionality should be implemented by adding new classes, attributes, and methods, instead of changing the current ones or existing ones.
 
 <pre>
 <code>
@@ -138,7 +140,7 @@ class SumCalculatorOutputter:
         return json.dumps({'sum': self.calculator.sum()})
 
     def html(self):
-        return f"<p>Sum of the areas of provided shapes: {self.calculator.sum()}</p>"
+        return f"Sum of the areas of provided shapes:{self.calculator.sum()}"
 
 shapes = [
     Circle(2),
@@ -161,9 +163,10 @@ print(outputter.html())
 
 ## Liskov Substitution Principle
 
-S is a sub-type of T, then objects of type T may be replaced with objects of type S.
-Derived types must be completely substitutable for their base types.
-LSP is a particular definition of a sub-typing relation, called behavioral sub-typing.
+* S is a subtype of T, then objects of type T may be replaced with objects of type S.
+* Derived types must be completely substitutable for their base types.
+
+* LSP is a particular definition of a sub-typing relation, called behavioral sub-typing.
 
 <pre>
 <code>
@@ -216,7 +219,7 @@ class VolumeCalculatorOutputter:
         return json.dumps({'volume_sum': self.calculator.sum()})
 
     def html(self):
-        return f"<p>Sum of the volumes of provided shapes: {self.calculator.sum():.2f}</p>"
+        return f"Sum of the volumes of provided shapes: {self.calculator.sum():.2f}"
 
     def plain_text(self):
         return f"Sum of the volumes of provided shapes: {self.calculator.sum():.2f}"
@@ -242,9 +245,10 @@ if __name__ == "__main__":
 
 ## Interface Segregation Principle
 
-No client should be forced to depend on methods it does not use.
-One fat interface need to be split in to many smaller and relevant interfaces so that clients can know about the interfaces that are relevant to them.
-The LSP was first used and formulated by Robert C. Martin while consulting for Xerox.
+* No client should be forced to depend on methods it does not use.
+* One fat interface needs to be split into many smaller and relevant interfaces so that clients can know about the interfaces that are relevant to them.
+
+* The LSP was first used and formulated by Robert C. Martin while consulting for Xerox.
 
 <pre>
 <code>
@@ -314,9 +318,10 @@ print(outputter.html())
 
 ## Dependency Inversion Principle
 
-High-level modules should not depend on low-level modules. Both should depend on abstractions.
-Abstractions should not depend on details. Details should depend on abstractions.
-The interaction between high-level and low-level modules should be though of as an abstract interaction between them.
+* High-level modules should not depend on low-level modules. Both should depend on abstractions.
+* Abstractions should not depend on details. Details should depend on abstractions.
+
+* The interaction between high-level and low-level modules should be thought of as an abstract interaction between them.
 
 <pre>
 <code>
@@ -357,7 +362,7 @@ class OutputFormatter(ABC):
 
 class HTMLOutputFormatter(OutputFormatter):
     def format(self, calculator):
-        return f"<p>Total area is: {calculator.sum():.2f}</p>"
+        return f"Total area is: {calculator.sum():.2f}"
 
 class JSONOutputFormatter(OutputFormatter):
     def format(self, calculator):
@@ -375,3 +380,11 @@ if __name__ == "__main__":
 
 </code>
 </pre>
+
+---
+
+## References
+
+[1] [SOLID: The First 5 Principles of Object Oriented Design](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design " By Digital Ocean")
+
+[2] [SOLID DESIGN PRINCIPLES(Video Series)](https://www.youtube.com/playlist?list=PL6n9fhu94yhXjG1w2blMXUzyDrZ_eyOme " By Kudden")
