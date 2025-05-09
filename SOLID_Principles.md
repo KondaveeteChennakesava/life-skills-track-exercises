@@ -383,4 +383,7 @@ print(json_formatter.format(calculator))
 
 *  [SOLID: The First 5 Principles of Object Oriented Design](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design " By Digital Ocean")
 
-*  [SOLID DESIGN PRINCIPLES(Video Series)](https://www.youtube.com/playlist?list=PL6n9fhu94yhXjG1w2blMXUzyDrZ_eyOme " By Kudden")
+*  [SOLID DESIGN PRINCIPLES(Video Series)](https://www.youtube.com/playlist?list=PL6n9fhu94yhXjG1w2blMXUzyDrZ_eyOme " By Kudvenkat")
+
+
+*  [Uncle Bob's SOLID Principles Made Easy- In Python](https://youtu.be/pTB30aXS77U?si=UT4Ptz6snDqJXe2A " By Arjan Codes")
