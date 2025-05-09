@@ -159,7 +159,6 @@ print(outputter.html())
 </code>
 </pre>
 
----
 
 ## Liskov Substitution Principle
 
@@ -224,24 +223,23 @@ class VolumeCalculatorOutputter:
     def plain_text(self):
         return f"Sum of the volumes of provided shapes: {self.calculator.sum():.2f}"
 
-if __name__ == "__main__":
-    shapes_3d = [
-        Cube(3),
-        Sphere(2),
-        Cylinder(2, 5)
-    ]
 
-    calculator = VolumeCalculator(shapes_3d)
-    outputter = VolumeCalculatorOutputter(calculator)
+shapes_3d = [
+    Cube(3),
+    Sphere(2),
+    Cylinder(2, 5)
+]
 
-    print(outputter.plain_text())
-    print(outputter.html())
-    print(outputter.json())
+calculator = VolumeCalculator(shapes_3d)
+outputter = VolumeCalculatorOutputter(calculator)
+
+print(outputter.plain_text())
+print(outputter.html())
+print(outputter.json())
 
 </code>
 </pre>
 
----
 
 ## Interface Segregation Principle
 
@@ -314,7 +312,6 @@ print(outputter.html())
 </code>
 </pre>
 
----
 
 ## Dependency Inversion Principle
 
@@ -368,23 +365,22 @@ class JSONOutputFormatter(OutputFormatter):
     def format(self, calculator):
         return json.dumps({"total_area": calculator.sum()})
 
-if __name__ == "__main__":
-    shapes = [Square(4), Circle(3)]
-    calculator = AreaCalculator(shapes)
 
-    html_formatter = HTMLOutputFormatter()
-    json_formatter = JSONOutputFormatter()
+shapes = [Square(4), Circle(3)]
+calculator = AreaCalculator(shapes)
 
-    print(html_formatter.format(calculator))
-    print(json_formatter.format(calculator))
+html_formatter = HTMLOutputFormatter()
+json_formatter = JSONOutputFormatter()
+
+print(html_formatter.format(calculator))
+print(json_formatter.format(calculator))
 
 </code>
 </pre>
 
----
 
 ## References
 
-[1] [SOLID: The First 5 Principles of Object Oriented Design](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design " By Digital Ocean")
+*  [SOLID: The First 5 Principles of Object Oriented Design](https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design " By Digital Ocean")
 
-[2] [SOLID DESIGN PRINCIPLES(Video Series)](https://www.youtube.com/playlist?list=PL6n9fhu94yhXjG1w2blMXUzyDrZ_eyOme " By Kudden")
+*  [SOLID DESIGN PRINCIPLES(Video Series)](https://www.youtube.com/playlist?list=PL6n9fhu94yhXjG1w2blMXUzyDrZ_eyOme " By Kudden")
