@@ -1,5 +1,1 @@
-./dip.py
-./isp.py
-./lsp.py
-./ocp.py
-./srp.py
+*.py
